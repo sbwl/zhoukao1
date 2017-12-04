@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="fonts1/iconfont.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="app">
+    <div class="wrap">
+        <header>
+            <i></i>
+            <span>公司</span>
+            <i class="iconfont">&#xe62f;</i>
+        </header>
+        <div class="menu">
+            <span>融资</span>
+            <span>规模</span>
+            <span>行业</span>
+        </div>
+        <section ng-controller="list">
+            <dl ng-repeat="aaa in data">
+                <dt><img ng-src="{{src}}"></dt>
+                <dd>
+                    <h4>{{baidu}}</h4>
+                    <span>{{sp}}</span>
+                    <p>{{p}}</p>
+                    <b>{{b}}<a href="#">{{a}}</a><b>{{bb}}</b></b>
+                </dd>
+            </dl>
+        </section>
+        <footer>
+            <dl>
+                <dt><i class="iconfont">&#xe636;</i></dt>
+                <dd>职位</dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont">&#xe677;</i></dt>
+                <dd>公司</dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont">&#xe8ae;</i></dt>
+                <dd>消息</dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont">&#xea15;</i></dt>
+                <dd>我的</dd>
+            </dl>
+        </footer>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/list.js"></script>
+    <script>
+        var xml = null;
+        if (window.XMLHttpRequest) {
+            xml = new XMLHttpRequest();
+        } else{
+            xml = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        xml.open('GET', url, trye);
+        xml.send();
+        xml.onreadystatechange = function () {
+            if (xml.readyState === 4){
+                if (xml.status === 200) {
+                    console.log(xml.resopnseText);
+                }
+            } else{
+                console.log(xml.statusText);
+            }
+        }
+    </script>
+</body>
+</html>
